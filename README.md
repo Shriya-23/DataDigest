@@ -26,7 +26,6 @@ I wanted to build something that:
 
 -Helps teams make decisions faster with less manual reading
 
-What Industry Problem It Solves
 
 🔷 Who Benefits from DataDigest
 
@@ -37,6 +36,30 @@ What Industry Problem It Solves
 -Business Analysts – Instantly turn raw spreadsheets into meaningful summaries for decision-making.
 
 -Researchers & Students – Summarize lengthy documents, papers, or lab data efficiently.
+
+
+🔷 Folder Structure
+
+📁DataDigest/
+│
+├── main.py                     # Streamlit main app file (core logic + UI)
+├── setup_nltk.py               # Downloads required NLTK resources (punkt, stopwords)
+│
+├── venv/                       # Virtual environment (not pushed to GitHub)
+│   ├── Lib/
+│   ├── Scripts/
+│   └── ... 
+│
+├── sample_files/               # Sample input files for testing (not pushed to github, stored locally for testing purpose)
+│   ├── feedback.txt
+│   ├── report1.docx
+│   └── sales_report.xlsx
+│
+├── DataDigest_Summary_Report.pdf  # Auto-generated PDF summary output
+│
+├── .gitignore                  # Ignored files (like venv/, large files)
+└── README.md                   # Project documentation
+
 
 🔷 Features
 
@@ -89,3 +112,59 @@ Python 3.10+
 -.gitignore
 
 -venv
+
+🔷 How It Works 
+
+-Upload Files
+You upload multiple files (.docx, .xlsx, .csv) via the Streamlit interface.
+
+-File Reading & Text Extraction
+
+.txt → decoded with UTF-8 for full compatibility
+
+.docx → parsed paragraph by paragraph using python-docx
+
+.xlsx / .csv → converted into a human-readable text format with pandas
+
+-AI Summarization Engine
+Extracted text is passed through the HuggingFace summarization pipeline, which compresses large documents into meaningful summaries (150–250 words).
+
+-PDF Report Generation
+All summaries are merged into one professional DataDigest Summary Report, formatted with file labels and generation timestamps.
+
+-Instant Download
+The final report is ready for download and review,clean, organized, and AI-written.
+
+🔷 How to run it locally 
+
+-Clone the Repository
+
+git clone https://github.com/Shriya-23/DataDigest.git
+
+cd DataDigest
+
+-Create and Activate a Virtual Environment
+
+For Windows:
+
+python -m venv venv
+
+venv\Scripts\activate
+
+-Install All Dependencies
+
+pip install streamlit transformers pandas python-docx openpyxl fpdf PyPDF2
+
+-Run the Application
+
+streamlit run main.py
+
+💼 About Me
+
+Hi! I’m Shriya Sharma, A Computer Science student passionate about building practical, data-driven, and impactful tech solutions.
+
+I love transforming ideas into simple, meaningful tools that bridge the gap between technology and real-world problems.
+
+💬 Got suggestions, feedback, or ideas?
+
+ shriya.sharma1923@gmail.com
