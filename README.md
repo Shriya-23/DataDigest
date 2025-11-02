@@ -43,21 +43,29 @@ I wanted to build something that:
 📁DataDigest/
 │
 ├── main.py                     # Streamlit main app file (core logic + UI)
+
 ├── setup_nltk.py               # Downloads required NLTK resources (punkt, stopwords)
 │
 ├── venv/                       # Virtual environment (not pushed to GitHub)
+
 │   ├── Lib/
+
 │   ├── Scripts/
+
 │   └── ... 
 │
 ├── sample_files/               # Sample input files for testing (not pushed to github, stored locally for testing purpose)
+
 │   ├── feedback.txt
+
 │   ├── report1.docx
+
 │   └── sales_report.xlsx
 │
 ├── DataDigest_Summary_Report.pdf  # Auto-generated PDF summary output
 │
 ├── .gitignore                  # Ignored files (like venv/, large files)
+
 └── README.md                   # Project documentation
 
 
